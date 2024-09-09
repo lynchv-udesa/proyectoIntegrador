@@ -6,7 +6,7 @@ function Home(){
     return (
         <>
             <React.Fragment>
-            
+            <Header/>
             <h1>Peliculas</h1>
             <main>
                 <h2>Mas Populares</h2>
