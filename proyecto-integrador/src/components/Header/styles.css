@@ -16,7 +16,14 @@ nav ul {
     align-items: center;
 }
 
-.main-nav li,
+.main-nav li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    width: 100%;
+    padding: 10px;
+}
 .user li {
     margin: 0 10px;
     display: flex;

@@ -31,9 +31,7 @@ function Header() {
                }
             </ul>
             <ul className="user">
-                <li>Nombre usuario 
-                    <img src="./imgs/user.jpg" alt="" />
-                </li>
+                <li>Netflix trucho :p</li>
             </ul>
         </nav>
     )

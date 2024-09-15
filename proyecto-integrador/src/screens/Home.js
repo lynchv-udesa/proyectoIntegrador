@@ -1,14 +1,14 @@
 import React from "react";
-
-import Footer from '../components/Footer/index'
-
+import PeliPopular from "../components/PeliPopular";
+import Buscador from "../components/Buscador";
 
 function Home(){
-    console.log('Este es mi jSon')
     return(
         <div> 
-            <React.Fragment>          
-            <Footer/>
+            <React.Fragment>
+                <h1>Home</h1>
+                <Buscador/>
+                <PeliPopular/>           
             </React.Fragment>
         </div>
         
