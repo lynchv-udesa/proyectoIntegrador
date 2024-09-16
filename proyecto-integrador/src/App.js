@@ -22,9 +22,9 @@ function App() {
         <Route path='/detalle/:id' component={Detalle} />
         <Route path='/favoritos' component={Favoritos} />
         <Route path='/resultados' component={Resultados} />
-        <Route path='' component={NotFound} /> 
+        <Route path='' component={NotFound} />
       </Switch>
-      <Footer/>
+      <Footer />
     </Router>
 
   );

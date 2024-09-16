@@ -17,11 +17,6 @@ class PeliPopular extends Component {
         fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apikey}`)
         .then((resp) => resp.json())
         .then((data) => {
-            console.log(data)
-            setTimeout(()=> this.setState ({
-                peliculas: data.results
-            }), 3000)
-            
         })
         .catch((err) => console.log(err))
     }
