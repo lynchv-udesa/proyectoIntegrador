@@ -2,12 +2,12 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 
 function Opcion(props) {
-  const ruta = props.data.ruta
+  const data = props.data
   return (
 
-    <Link to={`${ruta}`} >
+    <Link to={data.ruta} >
                 <article className="card">
-                    <p>{props.data.nombre}</p>
+                    <p>{data.nombre}</p>
                 </article>
     </Link>
   )

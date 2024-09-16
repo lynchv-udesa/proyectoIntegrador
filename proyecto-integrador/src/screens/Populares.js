@@ -1,8 +1,5 @@
 import React from "react";
 
-import Footer from '../components/Footer/index'
-
-
 function Populares(){
     return(
         <div> 
@@ -11,7 +8,6 @@ function Populares(){
 
             </React.Fragment>
         </div>
-        
     )
 }
 

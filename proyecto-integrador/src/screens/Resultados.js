@@ -1,14 +1,14 @@
 import React from "react";
 
-function Estrenos(props) {
+function Resultados(props) {
     return(
         <div> 
             <React.Fragment>  
-                <h1>Estrenos</h1>        
+                <h1>Resultados</h1>        
 
             </React.Fragment>
-        </div>
+        </div>  
     )
 }
 
-export default Estrenos
+export default Resultados
