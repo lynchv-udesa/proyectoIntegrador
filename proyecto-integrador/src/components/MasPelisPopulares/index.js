@@ -1,9 +1,9 @@
 import React, {Component} from "react";
-import Popular from "../Popular";
+import MasPopulares from "../MasPopulares";
 
 const apikey = '95758cce3c3e961388ca0ab2eaf4d664'
 
-class PeliPopular extends Component {
+class MasPelisPopulares extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -18,7 +18,7 @@ class PeliPopular extends Component {
         .then((data) => {
             console.log(data)
             setTimeout(()=> this.setState ({
-                peliculas: data.results.slice(0,5)
+                peliculas: data.results
             }), 3000)
             
         })
@@ -46,7 +46,7 @@ class PeliPopular extends Component {
                 {
                     this.state.peliculas.length > 0
                     ?
-                    this.state.peliculas.map((elm , idx) => <Popular key={elm.id + idx} data={elm} vermas={false} />) 
+                    this.state.peliculas.map((elm , idx) => <MasPopulares key={elm.id + idx} data={elm} vermas={false} />) 
                     : <h1>Cargando</h1>
                 }
             </section>
@@ -55,4 +55,4 @@ class PeliPopular extends Component {
         )
     }
 }
-export default PeliPopular
+export default MasPelisPopulares

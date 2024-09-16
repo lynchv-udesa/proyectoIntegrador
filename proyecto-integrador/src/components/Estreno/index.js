@@ -23,7 +23,7 @@ class Estreno extends Component {
     return (
       <div className="character-card">
         <Link to={`/rickandmorty/id/${id}`}>
-          <img className="imagen-personaje" src={poster_path} alt={title} />
+          <img className="imagen-personaje" src={'https://image.tmdb.org/t/p/w342/'+poster_path} alt={title} />
           <h4>{title}</h4>
         </Link>  
 

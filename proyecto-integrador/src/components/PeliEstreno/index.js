@@ -19,7 +19,7 @@ class PeliEstreno extends Component {
         .then((data) => {
             console.log(data)
             setTimeout(()=> this.setState ({
-                peliculas: data.results
+                peliculas: data.results.slice(0,5)
             }), 3000)
             
         })
