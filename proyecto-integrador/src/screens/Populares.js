@@ -11,7 +11,6 @@ function Populares(){
                 <PeliPopular/> 
             </React.Fragment>
         </div>
-        
     )
 }
 
