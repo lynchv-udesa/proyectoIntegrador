@@ -4,7 +4,7 @@ import Popular from "../Popular";
 
 const apikey = '95758cce3c3e961388ca0ab2eaf4d664'
 
-class PeliPopular extends Component {
+class PeliEstreno extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -14,13 +14,14 @@ class PeliPopular extends Component {
     }
     componentDidMount(){
         console.log('did mount')
-        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apikey}`)
+        fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=${apikey}`)
         .then((resp) => resp.json())
         .then((data) => {
             console.log(data)
             setTimeout(()=> this.setState ({
                 peliculas: data.results
             }), 3000)
+            
         })
         .catch((err) => console.log(err))
     }
@@ -55,4 +56,4 @@ class PeliPopular extends Component {
         )
     }
 }
-export default PeliPopular
+export default PeliEstreno

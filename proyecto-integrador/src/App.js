@@ -10,6 +10,7 @@ import Estrenos from './screens/Estrenos';
 import Detalle from './screens/Detalle';
 import Favoritos from './screens/Favoritos';
 import Resultados from './screens/Resultados';
+import NotFound from './screens/NotFound';
 
 function App() {
   console.log('Estas son las props de la Aplicacion');
@@ -23,6 +24,7 @@ function App() {
         <Route path='/detalle/:id' component={Detalle} />
         <Route path='/favoritos' component={Favoritos} />
         <Route path='/resultados' component={Resultados} />
+        <Route path='' component={NotFound} />
       </Switch>
       <Footer/>
     </>
