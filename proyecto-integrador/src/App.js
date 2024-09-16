@@ -1,8 +1,10 @@
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Home from './screens/Home';
-import Header from './components/Header';
-import Footer from '../src/components/Footer/index'
+import React from "react"
+import {Switch, Route} from 'react-router-dom'
 
+import Header from './components/Header';
+import Footer from './components/Footer'
+
+import Home from './screens/Home';
 import Populares from './screens/Populares';
 import Estrenos from './screens/Estrenos';
 import Detalle from './screens/Detalle';
@@ -13,7 +15,7 @@ import NotFound from './screens/NotFound';
 function App() {
   console.log('Estas son las props de la Aplicacion');
   return (
-    <Router>
+    <>
       <Header />
       <Switch>
         <Route path='/' exact component={Home} />
@@ -22,10 +24,10 @@ function App() {
         <Route path='/detalle/:id' component={Detalle} />
         <Route path='/favoritos' component={Favoritos} />
         <Route path='/resultados' component={Resultados} />
-        <Route path='' component={NotFound} /> 
+        <Route path='' component={NotFound} />
       </Switch>
       <Footer/>
-    </Router>
+    </>
 
   );
 }

@@ -20,7 +20,6 @@ class PeliPopular extends Component {
             setTimeout(()=> this.setState ({
                 peliculas: data.results.slice(0,5)
             }), 3000)
-            
         })
         .catch((err) => console.log(err))
     }
@@ -47,7 +46,8 @@ class PeliPopular extends Component {
                     this.state.peliculas.length > 0
                     ?
                     this.state.peliculas.map((elm , idx) => <Popular key={elm.id + idx} data={elm} vermas={false} />) 
-                    : <h1>Cargando</h1>
+                    : <img src="/img/7d1.gif" alt=""/>
+
                 }
             </section>
             </div>
