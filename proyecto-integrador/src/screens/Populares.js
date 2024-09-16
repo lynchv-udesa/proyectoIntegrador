@@ -1,5 +1,5 @@
 import React from "react";
-
+import PeliPopular from "../components/PeliPopular";
 import Footer from '../components/Footer/index'
 
 
@@ -8,7 +8,7 @@ function Populares(){
         <div> 
             <React.Fragment>  
                 <h1>Populares</h1>        
-
+                <PeliPopular/> 
             </React.Fragment>
         </div>
         
