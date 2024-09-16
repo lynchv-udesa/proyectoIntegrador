@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-
 import Buscador from "../Buscador";
 
 const apikey = '95758cce3c3e961388ca0ab2eaf4d664'
@@ -10,7 +9,6 @@ class PeliPopular extends Component {
         this.state = {
             peliculas: []
         }
-        
         console.log('constructor')
     }
     componentDidMount(){
