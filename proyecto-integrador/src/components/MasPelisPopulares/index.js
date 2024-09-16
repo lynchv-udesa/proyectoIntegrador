@@ -42,12 +42,12 @@ class MasPelisPopulares extends Component {
         return (
             <div>
               
-              <section className='card-container'>
+              <section className='contenedor-pelicula'>
                 {
                     this.state.peliculas.length > 0
                     ?
                     this.state.peliculas.map((elm , idx) => <MasPopulares key={elm.id + idx} data={elm} vermas={false} />) 
-                    : <h1>Cargando</h1>
+                    : <img  className="gif" src="/img/gif3.gif" alt="Cargando..."/>
                 }
             </section>
             </div>

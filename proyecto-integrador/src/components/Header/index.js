@@ -24,16 +24,13 @@ const opciones = [
 
 function Header() {
     return(
-        <nav>
-            <ul className="main-nav">
+        <nav className="header">
+            <ul className="navbar">
                {
                 opciones.map((elm) => <Opcion data={elm} /> )
                }
             </ul>
-            <ul className="user">
-                <li>Netflix trucho :p</li>
-            </ul>
-            <img className="logo" src="img/logo.png" />
+            <img className="logo" src="img/logo.png" alt="Michi Movie" />
         </nav>
     )
 } 

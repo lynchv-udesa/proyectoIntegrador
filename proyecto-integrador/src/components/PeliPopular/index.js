@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import Popular from "../Popular";
+import "./styles.css"
 
 const apikey = '95758cce3c3e961388ca0ab2eaf4d664'
 
@@ -41,12 +42,12 @@ class PeliPopular extends Component {
         return (
             <div>
               
-              <section className='card-container'>
+              <section className='contenedor-pelicula'>
                 {
                     this.state.peliculas.length > 0
                     ?
                     this.state.peliculas.map((elm , idx) => <Popular key={elm.id + idx} data={elm} vermas={false} />) 
-                    : <img src="/img/7d1.gif" alt=""/>
+                    : <img  className="gif" src="/img/gif3.gif" alt="Cargando..." />
 
                 }
             </section>

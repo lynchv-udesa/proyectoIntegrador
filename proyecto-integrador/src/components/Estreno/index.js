@@ -21,22 +21,22 @@ class Estreno extends Component {
     let {id, title, poster_path, overview} = this.props.data
     console.log('props', this.props)
     return (
-      <div className="character-card">
-        <Link to={`/rickandmorty/id/${id}`}>
-          <img className="imagen-personaje" src={'https://image.tmdb.org/t/p/w342/'+poster_path} alt={title} />
+      <div className="tarjeta-pelicula">
+        <Link to={`/detalle/${id}`}>
+          <img className="imagen-pelicula" src={'https://image.tmdb.org/t/p/w342/'+poster_path} alt={title} />
           <h4>{title}</h4>
         </Link>  
 
           { this.state.vermas === true 
           ? 
-          <section className='extra'>
+          <section className='extra-pelicula'>
               <p>{overview} </p> 
           </section>
           : 
           null }   
-          <button className="more" onClick = {() => this.vermas()}> {this.state.textoBoton} </button>
+          <button className="mas-pelicula" onClick = {() => this.vermas()}> {this.state.textoBoton} </button>
 
-          <button className="delete"> Agregar a Favoritos </button>
+          <button className="favoritos-pelicula"><i className="fa-regular fa-heart"></i></button> 
       </div>
     )
   }

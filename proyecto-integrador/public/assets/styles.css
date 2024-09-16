@@ -1,7 +1,16 @@
 body {
-  background: linear-gradient(to bottom, #2e4053, #1b2631);
+  background: linear-gradient(to bottom, #091340, #020929);
   color: white;
   font-family: "Saira", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 40px;
 }
 
 /* tipografia títulos::
@@ -9,12 +18,3 @@ body {
     tipografía resto: 
       font-family: "Saira", sans-serif;
       */
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-h1 {
-  font-weight: 600;
-}

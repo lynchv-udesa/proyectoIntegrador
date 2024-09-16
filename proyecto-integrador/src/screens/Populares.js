@@ -1,7 +1,5 @@
 import React from "react";
 import MasPelisPopulares from "../components/MasPelisPopulares";
-import Footer from '../components/Footer/index'
-
 
 function Populares(){
     return(

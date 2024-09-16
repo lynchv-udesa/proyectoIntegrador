@@ -6,7 +6,7 @@ function Opcion(props) {
   return (
 
     <Link to={data.ruta} >
-                <article className="card">
+                <article className="navs">
                     <p>{data.nombre}</p>
                 </article>
     </Link>

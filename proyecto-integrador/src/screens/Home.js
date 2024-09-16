@@ -7,8 +7,8 @@ function Home(){
     return(
         <div> 
             <React.Fragment>
-                <h1>Home</h1>
                 <Buscador/>
+                <h1>Home</h1>
                 <h2>Populares</h2>
                 <PeliPopular/> 
                 <h2>Estreno</h2>

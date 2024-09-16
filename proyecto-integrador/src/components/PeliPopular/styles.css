@@ -1,56 +1,71 @@
-.card-container {
+.contenedor-pelicula {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
-.character-card{
-    color: #777;
-    font-size: 20px;
+.tarjeta-pelicula{
+    width: 18%;
+    color: white;
     padding: 10px;
     margin-bottom: 20px;
-    width: 24%;
-    background: #fff;
-    border-radius: 5px;
-    box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15);
+    /* background: rgba(255, 255, 255, 0.2); */
 }
-.character-card img{
+.imagen-pelicula{
     width: 100%;
-    margin-bottom: 20px; 
+    box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.50);
 }
-.character-card:hover,
+
+.tarjeta-pelicula:hover,
 .active{
-box-shadow: 0rem 0rem 10px 8px rgb(58 59 69 / 25%);
+    /* box-shadow: 0rem 0rem 10px 8px rgb(58 59 69 / 25%); */
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 18.2%;
 }
-.character-card p {
-    margin: 3px 0;
+
+.tarjeta-pelicula h4 {
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0 0 0 2px;
 }
-.character-card h2 {
-    margin: 2px 0;
+
+.tarjeta-pelicula p {
+    font-size: 13px;
+    font-weight: 300;
+    margin-top: 0;
 }
-.more{
-    color: blue;
-    text-align: right;
+
+.mas-pelicula{
+    color: white;
     border: none;
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0);
 }
-.delete {
+
+.favoritos-pelicula {
     color: red;
     text-align: right;
     border: none;
     cursor: pointer;
+    margin-left: 50%;
     background-color: rgba(0, 0, 0, 0);
 }
-.more:hover,
-.delete:hover {
-    text-decoration: underline;
+
+.mas-pelicula:hover,
+.favoritos-pelicula:hover {
+    font-size: 14px;
     cursor: pointer;
 }
+
 .show{
     display: block;
 }
 .hide{
     display: none;
+}
+
+.gif {
+    width: 22%;
 }
