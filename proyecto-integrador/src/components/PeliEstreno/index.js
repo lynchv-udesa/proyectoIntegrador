@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import Popular from "../Popular";
+import {Link} from 'react-router-dom';
 
 const apikey = '95758cce3c3e961388ca0ab2eaf4d664'
 
@@ -49,6 +50,9 @@ class PeliEstreno extends Component {
                     : <img className="gif" src="/img/gif3.gif" alt="Cargando..." />
                 }
             </section>
+            <Link to={`/verTodasEstreno`}>
+            <h3>Ver todas en estreno</h3>
+            </Link>
             </div>
         )
     }

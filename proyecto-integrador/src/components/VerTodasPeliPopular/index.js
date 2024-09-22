@@ -1,11 +1,10 @@
 import React, {Component} from "react";
 import Popular from "../Popular";
-import {Link} from 'react-router-dom';
-import "./styles.css";
+import "./styles.css"
 
 const apikey = '95758cce3c3e961388ca0ab2eaf4d664'
 
-class PeliPopular extends Component {
+class VerTodasPeliPopular extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -20,7 +19,7 @@ class PeliPopular extends Component {
         .then((data) => {
             console.log(data)
             setTimeout(()=> this.setState ({
-                peliculas: data.results.slice(0,5)
+                peliculas: data.results.slice(0,10)
             }), 3000)
         })
         .catch((err) => console.log(err))
@@ -52,12 +51,9 @@ class PeliPopular extends Component {
 
                 }
             </section>
-            <Link to={`/verTodasPopulares`}>
-            <h3>Ver todas las populares</h3>
-            </Link>
             </div>
 
         )
     }
 }
-export default PeliPopular
+export default VerTodasPeliPopular
