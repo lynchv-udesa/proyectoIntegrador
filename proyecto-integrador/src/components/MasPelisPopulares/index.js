@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import MasPopulares from "../MasPopulares";
+import Filtro from "../Filtro";
 
 const apikey = '95758cce3c3e961388ca0ab2eaf4d664'
 
@@ -7,7 +8,8 @@ class MasPelisPopulares extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            peliculas: []
+            peliculas: [],
+            backuppeliculas: []
         }
         console.log('constructor')
     }
@@ -18,7 +20,8 @@ class MasPelisPopulares extends Component {
         .then((data) => {
             console.log(data)
             setTimeout(()=> this.setState ({
-                peliculas: data.results
+                peliculas: data.results,
+                backuppeliculas: data.results
             }), 3000)
             
         })
@@ -32,7 +35,7 @@ class MasPelisPopulares extends Component {
         console.log('did unmount')
     }
    filtrarPeliculas(nombrePelicula){
-        const peliculasFiltradas = this.state.peliculas.filter((elm) => elm.title.toLowerCase().includes(nombrePelicula.toLowerCase()))
+        const peliculasFiltradas = this.state.backuppeliculas.filter((elm) => elm.title.toLowerCase().includes(nombrePelicula.toLowerCase()))
         this.setState({
             peliculas: peliculasFiltradas
         })
@@ -41,7 +44,7 @@ class MasPelisPopulares extends Component {
         console.log('render')
         return (
             <div>
-              
+              <Filtro filtrarPeliculas={(nombre) => this.filtrarPeliculas(nombre)} />
               <section className='contenedor-pelicula'>
                 {
                     this.state.peliculas.length > 0
