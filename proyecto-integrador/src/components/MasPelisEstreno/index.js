@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Tarjeta from "../Tarjeta";
+import Filtro from "../Filtro";
 
 const apikey = '95758cce3c3e961388ca0ab2eaf4d664'
 
@@ -7,10 +8,8 @@ class MasPelisEstreno extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            limite: 10,
             peliculas: [],
-            verMas: false,
-            paginaACargar: 2,
+            backuppeliculas: [],
         }
         console.log('constructor')
     }
@@ -20,9 +19,10 @@ class MasPelisEstreno extends Component {
         fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=${apikey}`)
             .then((resp) => resp.json())
             .then((data) => {
-                console.log("data recibida", data)
+                console.log(data)
                 setTimeout(() => this.setState({
-                    peliculas: data.results
+                    peliculas: data.results,
+                    backuppeliculas: data.results
                 }), 3000)
 
             })
@@ -37,30 +37,30 @@ class MasPelisEstreno extends Component {
     }
 
     filtrarPeliculas(nombrePelicula) {
-        const peliculasFiltradas = this.state.peliculas.filter((elm) => elm.title.toLowerCase().includes(nombrePelicula.toLowerCase()))
+        const peliculasFiltradas = this.state.backuppeliculas.filter((elm) => elm.title.toLowerCase().includes(nombrePelicula.toLowerCase()))
         this.setState({
             peliculas: peliculasFiltradas
         })
     }
 
-    cargarMas(){
+    cargarMas() {
         fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=${apikey}&page=${this.state.paginaACargar}`)
-        .then(resp => resp.json())
-        .then((data)=> {
-            this.setState({
-                peliculas: this.state.peliculas.concat(data.results),
-                paginaACargar: this.state.paginaACargar + 1,
-                peliculasBacakup: this.state.peliculas.concat(data.results),
+            .then(resp => resp.json())
+            .then((data) => {
+                this.setState({
+                    peliculas: this.state.peliculas.concat(data.results),
+                    paginaACargar: this.state.paginaACargar + 1,
+                    peliculasBacakup: this.state.peliculas.concat(data.results),
+                })
             })
-        })
-        .catch((err)=> console.log(err))
+            .catch((err) => console.log(err))
     }
 
     render() {
         console.log('render')
         return (
             <div>
-
+                <Filtro filtrarPeliculas={(nombre)=> this.filtrarPeliculas(nombre)}/>
                 <section className='contenedor-pelicula'>
                     {
                         this.state.peliculas.length > 0
@@ -71,13 +71,13 @@ class MasPelisEstreno extends Component {
                 </section>
                 {
                     this.state.paginaACargar < 200 ?
-                        <button onClick= {() => this.cargarMas()}>
-                        VER MAS
+                        <button onClick={() => this.cargarMas()}>
+                            VER MAS
                         </button>
-                    :
-                    ``
+                        :
+                        ``
                 }
-                
+
             </div>
 
         )
