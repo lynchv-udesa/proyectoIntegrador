@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Tarjeta from "../components/Tarjeta";
 const Apikey =`95758cce3c3e961388ca0ab2eaf4d664`;
 export default class Resultados extends Component{
     constructor(props){
@@ -22,7 +23,7 @@ export default class Resultados extends Component{
             <div>
                 {
                     this.state.resultados.length > 0 ?
-                        this.state.resultados.map(elm => <h1>{elm.title}</h1>)
+                        this.state.resultados.map((elm , idx) => <Tarjeta key={elm.id + idx} data={elm} vermas={false} />)
                     :
                      <h1>No hay resultados que mostrar</h1>
                 }
