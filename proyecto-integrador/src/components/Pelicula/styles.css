@@ -1,0 +1,40 @@
+.detalle-contenedor {
+    display: flex;
+    width: 80vw;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin: 20px 0;
+}
+
+h3 {
+    font-size: 40px;
+    margin: 0;
+}
+
+.detalle-imagen {
+    width: 30vw;
+    height: auto;
+}
+
+.detalle-info {
+    display: flex;
+    width: 40vw;
+    flex-direction: column;
+}
+
+.favoritos-pelicula {
+    color: red;
+    font-size: 30px;
+    text-align: right;
+    border: none;
+    cursor: pointer;
+    margin-left: 50%;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.favoritos-pelicula:hover {
+    font-size: 32px;
+    cursor: pointer;
+}

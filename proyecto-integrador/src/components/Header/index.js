@@ -30,7 +30,7 @@ function Header() {
                 opciones.map((elm) => <Opcion data={elm} /> )
                }
             </ul>
-            <img className="logo" src="img/logo.png" alt="Michi Movie" />
+            <img className="logo" src="/img/logo.png" alt="Michi Movie" />
         </nav>
     )
 } 
