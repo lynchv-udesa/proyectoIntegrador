@@ -7,10 +7,14 @@ class MasPelisEstreno extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            peliculas: []
+            limite: 10,
+            peliculas: [],
+            verMas: false,
+            textoBoton: "VER MAS"
         }
         console.log('constructor')
     }
+
     componentDidMount(){
         console.log('did mount')
         fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=${apikey}`)
@@ -31,12 +35,23 @@ class MasPelisEstreno extends Component {
     componentWillUnmount(){
         console.log('did unmount')
     }
+
    filtrarPeliculas(nombrePelicula){
         const peliculasFiltradas = this.state.peliculas.filter((elm) => elm.title.toLowerCase().includes(nombrePelicula.toLowerCase()))
         this.setState({
             peliculas: peliculasFiltradas
         })
    }
+
+    
+    cambiarVerMas(){
+        this.setState({
+            verMas: !this.state.verMas,
+            limite: this.state.verMas ? 20 : 10,
+            textoBoton: this.state.verMas ? "VER MENOS" : "VER MAS",
+        })
+    }
+
     render() {
         console.log('render')
         return (
@@ -50,6 +65,9 @@ class MasPelisEstreno extends Component {
                     : <img  className="gif" src="/img/gif3.gif" alt="Cargando..."/>
                 }
             </section>
+            <button onClick={() => this.cambiarVerMas()}>
+                {this.state.textoBoton}
+            </button>
             </div>
 
         )
