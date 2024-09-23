@@ -1,9 +1,9 @@
 import React from "react";
-import Opcion from "../Opciones/index";
+import Navbar from "../Navbar/index";
 import './styles.css'
 
 
-const opciones = [
+const navs = [
     {
         nombre:"Home",
         ruta: '/'
@@ -27,7 +27,7 @@ function Header() {
         <nav className="header">
             <ul className="navbar">
                {
-                opciones.map((elm) => <Opcion data={elm} /> )
+                navs.map((elm) => <Navbar data={elm} /> )
                }
             </ul>
             <img className="logo" src="/img/logo.png" alt="Michi Movie" />

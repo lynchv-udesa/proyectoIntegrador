@@ -24,7 +24,7 @@ h3 {
     flex-direction: column;
 }
 
-.favoritos-pelicula {
+.detalle-favoritos {
     color: red;
     font-size: 30px;
     text-align: right;
@@ -34,7 +34,7 @@ h3 {
     background-color: rgba(0, 0, 0, 0);
 }
 
-.favoritos-pelicula:hover {
+.detalle-favoritos:hover {
     font-size: 32px;
     cursor: pointer;
 }
