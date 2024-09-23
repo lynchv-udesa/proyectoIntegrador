@@ -3,11 +3,11 @@ import PeliPopular from "../components/PeliPopular";
 import Buscador from "../components/Buscador";
 import PeliEstreno from "../components/PeliEstreno";
 
-function Home(){
+function Home(props){
     return(
         <div> 
             <React.Fragment>
-                <Buscador/>
+                <Buscador history={props.history}/>
                 <h1>Home</h1>
                 <h2>Populares</h2>
                 <PeliPopular/> 
