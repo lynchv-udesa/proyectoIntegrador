@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import MasPopulares from "../MasPopulares";
+import Tarjeta from "../Tarjeta";
 import Filtro from "../Filtro";
 
 const apikey = '95758cce3c3e961388ca0ab2eaf4d664'
