@@ -12,7 +12,7 @@ function Home(){
                 <h2>Populares</h2>
                 <PeliPopular/> 
                 <h2>Estreno</h2>
-                <PeliEstreno/>          
+                <PeliEstreno/>      
             </React.Fragment>
         </div>
         

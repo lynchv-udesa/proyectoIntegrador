@@ -12,6 +12,7 @@ import Favoritos from './screens/Favoritos';
 import Resultados from './screens/Resultados';
 import NotFound from './screens/NotFound';
 
+
 function App() {
   console.log('Estas son las props de la Aplicacion');
   return (

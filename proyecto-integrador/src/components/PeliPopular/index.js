@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import Popular from "../Popular";
-import "./styles.css"
+import {Link} from 'react-router-dom';
+import "./styles.css";
 
 const apikey = '95758cce3c3e961388ca0ab2eaf4d664'
 
@@ -51,6 +52,9 @@ class PeliPopular extends Component {
 
                 }
             </section>
+            <Link to={`/populares`}>
+            <h3>Ver todas las populares</h3>
+            </Link>
             </div>
 
         )
