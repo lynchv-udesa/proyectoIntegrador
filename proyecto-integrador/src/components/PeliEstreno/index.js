@@ -50,7 +50,7 @@ class PeliEstreno extends Component {
                     : <img className="gif" src="/img/gif3.gif" alt="Cargando..." />
                 }
             </section>
-            <Link to={`/verTodasEstreno`}>
+            <Link to={`/estrenos`}>
             <h3>Ver todas en estreno</h3>
             </Link>
             </div>

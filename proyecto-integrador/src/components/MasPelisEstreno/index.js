@@ -1,10 +1,9 @@
 import React, {Component} from "react";
-import Popular from "../Popular";
-import "./styles.css"
+import MasPopulares from "../MasPopulares";
 
 const apikey = '95758cce3c3e961388ca0ab2eaf4d664'
 
-class VerTodasPeliPopular extends Component {
+class MasPelisEstreno extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -14,13 +13,14 @@ class VerTodasPeliPopular extends Component {
     }
     componentDidMount(){
         console.log('did mount')
-        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apikey}`)
+        fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=${apikey}`)
         .then((resp) => resp.json())
         .then((data) => {
             console.log(data)
             setTimeout(()=> this.setState ({
-                peliculas: data.results.slice(0,10)
+                peliculas: data.results
             }), 3000)
+            
         })
         .catch((err) => console.log(err))
     }
@@ -46,9 +46,8 @@ class VerTodasPeliPopular extends Component {
                 {
                     this.state.peliculas.length > 0
                     ?
-                    this.state.peliculas.map((elm , idx) => <Popular key={elm.id + idx} data={elm} vermas={false} />) 
-                    : <img  className="gif" src="/img/gif3.gif" alt="Cargando..." />
-
+                    this.state.peliculas.map((elm , idx) => <MasPopulares key={elm.id + idx} data={elm} vermas={false} />) 
+                    : <img  className="gif" src="/img/gif3.gif" alt="Cargando..."/>
                 }
             </section>
             </div>
@@ -56,4 +55,4 @@ class VerTodasPeliPopular extends Component {
         )
     }
 }
-export default VerTodasPeliPopular
+export default MasPelisEstreno

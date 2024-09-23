@@ -52,7 +52,7 @@ class PeliPopular extends Component {
 
                 }
             </section>
-            <Link to={`/verTodasPopulares`}>
+            <Link to={`/populares`}>
             <h3>Ver todas las populares</h3>
             </Link>
             </div>
