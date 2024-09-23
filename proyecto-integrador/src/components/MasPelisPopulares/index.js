@@ -51,7 +51,6 @@ class MasPelisPopulares extends Component {
                 }
             </section>
             </div>
-
         )
     }
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
-function Opcion(props) {
+function Navbar(props) {
   const data = props.data
   return (
 
@@ -12,4 +12,4 @@ function Opcion(props) {
     </Link>
   )
 }
-export default Opcion
+export default Navbar

@@ -33,7 +33,7 @@ class Detalle extends Component {
                     <p><strong>Sinopsis:</strong><br />{this.state.pelicula.overview}</p>
                     <p><strong>Fecha de estreno:</strong><br />{this.state.pelicula.release_date}</p>
                     <p><strong>Duración:</strong><br />{this.state.pelicula.runtime}</p>
-                    <button className="favoritos-pelicula"><i className="fa-regular fa-heart"></i></button> 
+                    <button className="detalle-favoritos"><i className="fa-regular fa-heart"></i></button> 
                 </div>
             </section>
         )
