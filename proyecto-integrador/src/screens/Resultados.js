@@ -9,11 +9,12 @@ export default class Resultados extends Component{
     componentDidMount(){
         const loQueBuscaElUsuario = this.props.history.location.state.busqueda
         fetch(`https://api.themoviedb.org/3/search/movie?api_key=${Apikey}&query=${loQueBuscaElUsuario}`)
-        .then(resp => resp.jason)
-        .then(data => {
-            console.log(`data`,data)
+        .then(resp => resp.json())
+        .then((data) => {
+            console.log(`buscado`,data)
             this.setState({resultados: data.results})
         })
+        .catch((err) => console.log(err))
     }
 
     render(){
