@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import Popular from "../Popular";
+import Tarjeta from "../Tarjeta";
 import {Link} from 'react-router-dom';
 
 const apikey = '95758cce3c3e961388ca0ab2eaf4d664'
@@ -46,12 +46,12 @@ class PeliEstreno extends Component {
                 {
                     this.state.peliculas.length > 0
                     ?
-                    this.state.peliculas.map((elm , idx) => <Popular key={elm.id + idx} data={elm} vermas={false} />) 
+                    this.state.peliculas.map((elm , idx) => <Tarjeta key={elm.id + idx} data={elm} vermas={false} />) 
                     : <img className="gif" src="/img/gif3.gif" alt="Cargando..." />
                 }
             </section>
             <Link to={`/estrenos`}>
-            <h3>Ver todas en estreno</h3>
+            <h4>Ver todas en estreno</h4>
             </Link>
             </div>
         )

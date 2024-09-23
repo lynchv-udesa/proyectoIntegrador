@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import MasPopulares from "../MasPopulares";
+import Tarjeta from "../Tarjeta";
 
 const apikey = '95758cce3c3e961388ca0ab2eaf4d664'
 
@@ -46,7 +46,7 @@ class MasPelisPopulares extends Component {
                 {
                     this.state.peliculas.length > 0
                     ?
-                    this.state.peliculas.map((elm , idx) => <MasPopulares key={elm.id + idx} data={elm} vermas={false} />) 
+                    this.state.peliculas.map((elm , idx) => <Tarjeta key={elm.id + idx} data={elm} vermas={false} />) 
                     : <img  className="gif" src="/img/gif3.gif" alt="Cargando..."/>
                 }
             </section>

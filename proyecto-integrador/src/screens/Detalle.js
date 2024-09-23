@@ -6,7 +6,7 @@ function Detalle(props) {
         <div> 
             <React.Fragment>  
                 <h1>Detalle</h1>   
-                <Pelicula id={props.match.params.id}/>     
+                <Pelicula id={parseInt(props.match.params.id)}/>     
             </React.Fragment>
         </div>
     )
