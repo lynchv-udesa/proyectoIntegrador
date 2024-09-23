@@ -66,7 +66,6 @@ class Detalle extends Component {
     }
 
     render() {
-        console.log("pelicula", this.state.pelicula)
         return ( 
             <div>
                 { 

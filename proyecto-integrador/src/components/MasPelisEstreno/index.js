@@ -12,15 +12,12 @@ class MasPelisEstreno extends Component {
             verMas: false,
             paginaACargar: 2,
         }
-        console.log('constructor')
     }
 
     componentDidMount() {
-        console.log('did mount')
         fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=${apikey}`)
             .then((resp) => resp.json())
             .then((data) => {
-                console.log("data recibida", data)
                 setTimeout(() => this.setState({
                     peliculas: data.results
                 }), 3000)
@@ -57,7 +54,6 @@ class MasPelisEstreno extends Component {
     }
 
     render() {
-        console.log('render')
         return (
             <div>
 

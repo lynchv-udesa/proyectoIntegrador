@@ -11,14 +11,12 @@ class MasPelisPopulares extends Component {
             peliculas: [],
             backuppeliculas: []
         }
-        console.log('constructor')
     }
+    
     componentDidMount(){
-        console.log('did mount')
         fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apikey}`)
         .then((resp) => resp.json())
         .then((data) => {
-            console.log(data)
             setTimeout(()=> this.setState ({
                 peliculas: data.results,
                 backuppeliculas: data.results
@@ -41,7 +39,6 @@ class MasPelisPopulares extends Component {
         })
    }
     render() {
-        console.log('render')
         return (
             <div>
               <Filtro filtrarPeliculas={(nombre) => this.filtrarPeliculas(nombre)} />

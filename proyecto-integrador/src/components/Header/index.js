@@ -27,7 +27,7 @@ function Header() {
         <nav className="header">
             <ul className="navbar">
                {
-                navs.map((elm) => <Navbar data={elm} /> )
+                navs.map((elm, idx) => <Navbar key={elm.nombre + idx} data={elm} /> )
                }
             </ul>
             <img className="logo" src="/img/logo.png" alt="Michi Movie" />

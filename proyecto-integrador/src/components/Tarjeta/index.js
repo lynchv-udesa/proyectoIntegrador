@@ -67,7 +67,6 @@ sacarDeFavoritos(id){
 
   render(){
     let {id, title, poster_path, overview} = this.props.data
-    console.log('props', this.props)
     return (
       <div className="tarjeta-pelicula">
         <Link to={`/detalle/${id}`}>
