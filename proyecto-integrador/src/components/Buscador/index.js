@@ -12,6 +12,7 @@ class Buscador extends Component {
     evitarSubmit(event) {
         console.log(event)
         event.preventDefault()
+        this.props.history.push(`/resultados`, {busqueda: this.state.busqueda})
     }
 
     controlarInputs(event) {
