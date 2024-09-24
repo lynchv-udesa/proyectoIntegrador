@@ -1,6 +1,6 @@
 .detalle-contenedor {
     display: flex;
-    width: 80vw;
+    width: 90vw;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
@@ -20,7 +20,7 @@ h3 {
 
 .detalle-info {
     display: flex;
-    width: 40vw;
+    width: 50vw;
     flex-direction: column;
 }
 
@@ -37,4 +37,26 @@ h3 {
 .detalle-favoritos:hover {
     font-size: 32px;
     cursor: pointer;
+}
+
+@media screen and (max-width:450px){
+    .detalle-contenedor {
+        width: 90vw;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .detalle-imagen {
+        width: 80vw;
+        height: auto;
+    }
+    
+    .detalle-info {
+        width: 80vw;
+    }
+
+    p {
+        text-align: justify;
+    }
 }

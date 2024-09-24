@@ -81,6 +81,7 @@ sacarDeFavoritos(id){
           </section>
           : 
           null }   
+
           <button className="mas-pelicula" onClick = {() => this.vermas()}> {this.state.textoBoton} </button>
 
           { this.state.esFavorito 

@@ -22,10 +22,12 @@ class Buscador extends Component {
 
     render() {
         return (
-            <form onSubmit={(event) => this.evitarSubmit(event)} >
-                <input value={this.state.busqueda} onChange={(event) => this.cambioInput(event) } />
-                <button className="boton" type='submit'>Buscar</button>
-            </form>
+            <div className="buscador">
+                <form onSubmit={(event) => this.evitarSubmit(event)} >
+                    <input className="barra" value={this.state.busqueda} onChange={(event) => this.cambioInput(event) } />
+                    <button className="boton" type='submit'>Buscar</button>
+                </form>
+            </div>
         )
     }
 
