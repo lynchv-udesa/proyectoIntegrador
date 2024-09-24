@@ -36,3 +36,9 @@ h4 {
     tipografía resto: 
       font-family: "Saira", sans-serif;
       */
+
+@media screen and (max-width:450px){
+    .gif {
+      width: 80%;
+    }
+}

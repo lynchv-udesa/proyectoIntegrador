@@ -21,6 +21,7 @@ nav ul {
     font-size: 18px;
     color: white;
     font-weight: 500;
+    margin: 0 10px 0 10px;
 }
 
 .user li {
@@ -33,5 +34,22 @@ nav ul {
 
 .logo {
     width: 100px;
+    height: auto;
     margin-right: 20px;
+}
+
+@media screen and (max-width:450px){
+    .header {
+        align-items: center;
+    }
+
+    .navs {
+        margin: -10px 10px -10px 0;
+    }
+
+    .logo {
+        width: 28vw;
+        height: 15vh;
+        margin-right: 20px;
+    }
 }
