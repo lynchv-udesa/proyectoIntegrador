@@ -7,8 +7,8 @@ class Filtro extends Component {
             valorInput1: ''
         }
     }
-    evitarSubmit(event){
-        event.preventDefault()
+    evitarSubmit = (event) => {
+        event.preventDefault();
     }
 
     
@@ -21,7 +21,7 @@ class Filtro extends Component {
 
     render() {
         return (
-            <form onSubmit={() => this.evitarSubmit}>
+            <form onSubmit={this.evitarSubmit}>
                 <input onChange={(event) => this.controlarInput(event)} value={this.state.valorInput1} />
                 <button>Enviar</button>
             </form>

@@ -9,7 +9,8 @@ class MasPelisPopulares extends Component {
         super(props)
         this.state = {
             peliculas: [],
-            backuppeliculas: []
+            backuppeliculas: [],
+            paginaACargar: 1
         }
     }
     componentDidMount() {
@@ -39,6 +40,18 @@ class MasPelisPopulares extends Component {
             peliculas: peliculasFiltradas
         })
     }
+    cargarMas(){
+        fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=${apikey}&page=${this.state.paginaACargar}`)
+        .then(resp => resp.json())
+        .then((data) => {
+            this.setState({
+                peliculas: this.state.peliculas.concat(data.results),
+                paginaACargar: this.state.paginaACargar + 1,
+                peliculasBacakup: this.state.peliculas.concat(data.results),
+            })
+        })
+        .catch((err) => console.log(err))
+    }
     render() {
         return (
             <div>
@@ -51,6 +64,17 @@ class MasPelisPopulares extends Component {
                             : <img className="gif" src="/img/gif3.gif" alt="Cargando..." />
                     }
                 </section>
+                <section>
+                    {
+                    this.state.paginaACargar < 200 ?
+                    <button onClick={() => this.cargarMas()}>
+                        VER MAS
+                    </button>
+                    :
+                    ""
+                }
+                </section>
+                
             </div>
         )
     }
