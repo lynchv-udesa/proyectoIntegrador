@@ -55,4 +55,8 @@ h3 {
     .detalle-info {
         width: 80vw;
     }
+
+    p {
+        text-align: justify;
+    }
 }

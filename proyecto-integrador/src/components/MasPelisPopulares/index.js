@@ -56,25 +56,27 @@ class MasPelisPopulares extends Component {
         return (
             <div>
                 <Filtro filtrarPeliculas={(nombre) => this.filtrarPeliculas(nombre)} />
-                <section className='contenedor-pelicula'>
+                <section>
                     {
                         this.state.peliculas.length > 0
                             ?
-                            this.state.peliculas.map((elm, idx) => <Tarjeta key={elm.id + idx} data={elm} vermas={false} />)
+                            <section className='contenedor-pelicula'>
+                            {
+                                this.state.peliculas.map((elm, idx) => <Tarjeta key={elm.id + idx} data={elm} vermas={false} />)
+                            }
+                            {
+                                this.state.paginaACargar < 200 
+                                ?
+                                <button className="vermas" onClick={() => this.cargarMas()}>
+                                    <i class="fa-solid fa-arrow-down"></i>
+                                </button>
+                                :
+                                ``
+                            }
+                            </section>
                             : <img className="gif" src="/img/gif3.gif" alt="Cargando..." />
                     }
                 </section>
-                <section>
-                    {
-                    this.state.paginaACargar < 200 ?
-                    <button onClick={() => this.cargarMas()}>
-                        VER MAS
-                    </button>
-                    :
-                    ""
-                }
-                </section>
-                
             </div>
         )
     }

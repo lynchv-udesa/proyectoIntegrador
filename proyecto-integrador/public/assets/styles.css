@@ -30,6 +30,16 @@ h4 {
   justify-content: space-around;
 }
 
+.vermas {
+  color: white;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  background-color: rgba(59, 69, 123, 0.6);
+  width: 90vw;
+  height: 25px;
+}
+
 
 /* tipografia títulos::
       font-family: "Changa One", sans-serif;
