@@ -10,6 +10,7 @@ class MasPelisEstreno extends Component {
         this.state = {
             peliculas: [],
             backuppeliculas: [],
+            paginaACargar: 2
         }
     }
 
@@ -66,7 +67,8 @@ class MasPelisEstreno extends Component {
                             : <img className="gif" src="/img/gif3.gif" alt="Cargando..." />
                     }
                 </section>
-                {
+                <section>
+                    {
                     this.state.paginaACargar < 200 ?
                         <button onClick={() => this.cargarMas()}>
                             VER MAS
@@ -74,6 +76,8 @@ class MasPelisEstreno extends Component {
                         :
                         ``
                 }
+                </section>
+                
 
             </div>
 
