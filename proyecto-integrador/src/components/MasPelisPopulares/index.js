@@ -47,7 +47,7 @@ class MasPelisPopulares extends Component {
             this.setState({
                 peliculas: this.state.peliculas.concat(data.results),
                 paginaACargar: this.state.paginaACargar + 1,
-                peliculasBacakup: this.state.peliculas.concat(data.results),
+                backuppeliculas: this.state.peliculas.concat(data.results),
             })
         })
         .catch((err) => console.log(err))
