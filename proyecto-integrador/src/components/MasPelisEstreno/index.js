@@ -22,7 +22,7 @@ class MasPelisEstreno extends Component {
                 setTimeout(() => this.setState({
                     peliculas: data.results,
                     backuppeliculas: data.results
-                }), 3000)
+                }), 2000)
 
             })
             .catch((err) => console.log(err))
@@ -58,11 +58,12 @@ class MasPelisEstreno extends Component {
     render() {
         return (
             <div>
-                <Filtro filtrarPeliculas={(nombre)=> this.filtrarPeliculas(nombre)}/>
-                <section>
                     {
-                        this.state.peliculas.length > 0
+                        this.state.peliculas.length > 0 
                             ?
+                            <section>
+                            <h1>Estrenos</h1>
+                            <Filtro filtrarPeliculas={(nombre)=> this.filtrarPeliculas(nombre)}/>
                             <section className='contenedor-pelicula'>
                             {
                                 this.state.peliculas.map((elm, idx) => <Tarjeta key={elm.id + idx} data={elm} vermas={false} />)
@@ -77,9 +78,14 @@ class MasPelisEstreno extends Component {
                                 ``
                             }
                             </section>
-                            : <img className="gif" src="/img/gif3.gif" alt="Cargando..." />
+                            </section>
+                            
+                            : 
+                            
+                            <section className='contenedor-pelicula'>
+                            <img className="gif gif-mas" src="/img/gif3.gif" alt="Cargando..." />
+                            </section>
                     }
-                </section>
             </div>
 
         )

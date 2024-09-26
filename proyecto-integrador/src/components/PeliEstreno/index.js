@@ -20,7 +20,7 @@ class PeliEstreno extends Component {
             console.log(data)
             setTimeout(()=> this.setState ({
                 peliculas: data.results.slice(0,5)
-            }), 3000)
+            }), 2000)
             
         })
         .catch((err) => console.log(err))
@@ -42,17 +42,26 @@ class PeliEstreno extends Component {
         console.log('render')
         return (
             <div>
-              <section className='contenedor-pelicula'>
+
                 {
                     this.state.peliculas.length > 0
                     ?
-                    this.state.peliculas.map((elm , idx) => <Tarjeta key={elm.id + idx} data={elm} vermas={false} />) 
-                    : <img className="gif" src="/img/gif3.gif" alt="Cargando..." />
+                    <section className='contenedor-pelicula'>
+                    { 
+                        this.state.peliculas.map((elm , idx) => <Tarjeta key={elm.id + idx} data={elm} vermas={false} />) 
+                    }
+                    <Link to={`/estrenos`}>
+                    <h4>Ver todos los Estrenos</h4>
+                    </Link>
+                    </section>
+
+                    :
+
+                    <section className='contenedor-pelicula'>
+                    <img className="gif" src="/img/gif3.gif" alt="Cargando..." />
+                    </section>
                 }
-            </section>
-            <Link to={`/estrenos`}>
-            <h4>Ver todas en estreno</h4>
-            </Link>
+        
             </div>
         )
     }

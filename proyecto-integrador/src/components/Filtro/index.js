@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import "./styles.css"
 
 class Filtro extends Component {
     constructor(props){
@@ -11,8 +12,6 @@ class Filtro extends Component {
         event.preventDefault();
     }
 
-    
-
     controlarInput(event){
         this.setState({
             valorInput1: event.target.value
@@ -22,8 +21,8 @@ class Filtro extends Component {
     render() {
         return (
             <form onSubmit={this.evitarSubmit}>
-                <input onChange={(event) => this.controlarInput(event)} value={this.state.valorInput1} />
-                <button>Enviar</button>
+                <input className="filtro" onChange={(event) => this.controlarInput(event)} value={this.state.valorInput1} />
+                <button className="filtro-boton" >Enviar</button>
             </form>
         )
     }

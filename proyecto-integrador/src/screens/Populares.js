@@ -4,8 +4,7 @@ import MasPelisPopulares from "../components/MasPelisPopulares";
 function Populares(){
     return(
         <div> 
-            <React.Fragment>  
-                <h1>Populares</h1>       
+            <React.Fragment>      
                 <MasPelisPopulares/> 
             </React.Fragment>
         </div>

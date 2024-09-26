@@ -19,15 +19,22 @@ export default class Resultados extends Component{
     }
 
     render(){
+        const loQueBuscaElUsuario = this.props.history.location.state.busqueda
         return (
             <div>
                 {
                     this.state.resultados.length > 0 ?
-                        this.state.resultados.map((elm , idx) => <Tarjeta key={elm.id + idx} data={elm} vermas={false} />)
-                    :
-                     <h1>No hay resultados que mostrar</h1>
+                    <div>
+                    <h1>Resultados de búsqueda para "{loQueBuscaElUsuario}"</h1>
+                        <section className='contenedor-pelicula'>
+                            {
+                            this.state.resultados.map((elm , idx) => <Tarjeta key={elm.id + idx} data={elm} vermas={false} />)
+                            }
+                        </section>
+                    </div>
+                        :
+                     <h1>No hay resultados para "{loQueBuscaElUsuario}"</h1>
                 }
-                <h1>Resultados</h1>
             </div>
         )
     }

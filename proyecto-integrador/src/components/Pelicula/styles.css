@@ -39,6 +39,10 @@ h3 {
     cursor: pointer;
 }
 
+p {
+    margin-bottom: 5px;
+}
+
 @media screen and (max-width:450px){
     .detalle-contenedor {
         width: 90vw;

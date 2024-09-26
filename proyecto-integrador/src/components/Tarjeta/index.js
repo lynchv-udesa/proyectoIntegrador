@@ -70,7 +70,12 @@ sacarDeFavoritos(id){
     return (
       <div className="tarjeta-pelicula">
         <Link to={`/detalle/${id}`}>
-          <img className="imagen-pelicula" src={'https://image.tmdb.org/t/p/w342/'+poster_path} alt={title} />
+          { poster_path == null 
+           ?
+            <img className="imagen-pelicula" src="/img/sinImagen.png" alt={title} />
+           :
+            <img className="imagen-pelicula" src={'https://image.tmdb.org/t/p/w342/'+poster_path} alt={title} />
+          }
           <h4>{title}</h4>
         </Link>  
 

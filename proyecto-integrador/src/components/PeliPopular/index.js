@@ -20,7 +20,7 @@ class PeliPopular extends Component {
             console.log(data)
             setTimeout(()=> this.setState ({
                 peliculas: data.results.slice(0,5)
-            }), 3000)
+            }), 2000)
         })
         .catch((err) => console.log(err))
     }
@@ -41,19 +41,26 @@ class PeliPopular extends Component {
         console.log('render')
         return (
             <div>
-              
-              <section className='contenedor-pelicula'>
+                
                 {
                     this.state.peliculas.length > 0
                     ?
-                    this.state.peliculas.map((elm , idx) => <Tarjeta key={elm.id + idx} data={elm} vermas={false} />) 
-                    : <img  className="gif" src="/img/gif3.gif" alt="Cargando..." />
+                    <section className='contenedor-pelicula'>
+                    {
+                        this.state.peliculas.map((elm , idx) => <Tarjeta key={elm.id + idx} data={elm} vermas={false} />) 
+                    }
+                    <Link to={`/populares`}>
+                    <h4>Ver todas las Populares</h4>
+                    </Link>
+                    </section>
 
+                    : 
+                    
+                    <section className='contenedor-pelicula'>
+                    <img  className="gif" src="/img/gif3.gif" alt="Cargando..." />
+                    </section>
                 }
-            </section>
-            <Link to={`/populares`}>
-            <h4>Ver todas las populares</h4>
-            </Link>
+            
             </div>
 
         )

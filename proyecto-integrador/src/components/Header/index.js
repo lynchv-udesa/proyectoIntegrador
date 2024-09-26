@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from 'react-router-dom';
 import Navbar from "../Navbar/index";
 import './styles.css'
 
@@ -30,7 +31,10 @@ function Header() {
                 navs.map((elm, idx) => <Navbar key={elm.nombre + idx} data={elm} /> )
                }
             </ul>
-            <img className="logo" src="/img/logo.png" alt="Michi Movie" />
+            <Link to={`/`}>
+                <img className="logo" src="/img/logo.png" alt="Michi Movie" />
+            </Link>
+            
         </nav>
     )
 } 
