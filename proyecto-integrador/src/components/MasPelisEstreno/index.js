@@ -10,7 +10,8 @@ class MasPelisEstreno extends Component {
         this.state = {
             peliculas: [],
             backuppeliculas: [],
-            paginaACargar: 2
+            paginaACargar: 2,
+            valorPelicula: ""
         }
     }
 
@@ -37,8 +38,10 @@ class MasPelisEstreno extends Component {
 
     filtrarPeliculas(nombrePelicula) {
         const peliculasFiltradas = this.state.backuppeliculas.filter((elm) => elm.title.toLowerCase().includes(nombrePelicula.toLowerCase()))
+        const valorPelicula = nombrePelicula
         this.setState({
-            peliculas: peliculasFiltradas
+            peliculas: peliculasFiltradas,
+            valorPelicula: valorPelicula
         })
     }
 
@@ -49,43 +52,60 @@ class MasPelisEstreno extends Component {
                 this.setState({
                     peliculas: this.state.peliculas.concat(data.results),
                     paginaACargar: this.state.paginaACargar + 1,
-                    backuppeliculas: this.state.peliculas.concat(data.results),
+                    peliculasBacakup: this.state.peliculas.concat(data.results),
                 })
             })
             .catch((err) => console.log(err))
     }
 
     render() {
+        console.log("value", this.state.valorPelicula)
         return (
             <div>
-                    {
-                        this.state.peliculas.length > 0 
+                {
+                    this.state.peliculas.length > 0 
+                    
+                    ?
+                    
+                    <section>
+                    <h1>Estrenos</h1>
+                    <Filtro filtrarPeliculas={(nombre)=> this.filtrarPeliculas(nombre)}/>
+                    <section className='contenedor-pelicula'>
+                        {
+                            this.state.peliculas.map((elm, idx) => <Tarjeta key={elm.id + idx} data={elm} vermas={false} />)
+                        }
+                        {
+                            this.state.paginaACargar < 200 
                             ?
-                            <section>
+                            <button className="vermas" onClick={() => this.cargarMas()}>
+                                <i class="fa-solid fa-arrow-down"></i>
+                            </button>
+                            :
+                            ``
+                        }
+                    </section>
+                    </section>
+                    
+                    : 
+
+                        this.state.peliculas.length === 0 && this.state.valorPelicula !== ""
+                        
+                        ?
+
+                        <section>
                             <h1>Estrenos</h1>
                             <Filtro filtrarPeliculas={(nombre)=> this.filtrarPeliculas(nombre)}/>
                             <section className='contenedor-pelicula'>
-                            {
-                                this.state.peliculas.map((elm, idx) => <Tarjeta key={elm.id + idx} data={elm} vermas={false} />)
-                            }
-                            {
-                                this.state.paginaACargar < 200 
-                                ?
-                                <button className="vermas" onClick={() => this.cargarMas()}>
-                                    <i class="fa-solid fa-arrow-down"></i>
-                                </button>
-                                :
-                                ``
-                            }
+                                <h2>No hay resultados para {this.state.valorPelicula}</h2>
                             </section>
-                            </section>
-                            
-                            : 
-                            
-                            <section className='contenedor-pelicula'>
+                        </section>
+                        
+                        :
+                        
+                        <section className='contenedor-pelicula'>
                             <img className="gif gif-mas" src="/img/gif3.gif" alt="Cargando..." />
-                            </section>
-                    }
+                        </section>
+                }
             </div>
 
         )
