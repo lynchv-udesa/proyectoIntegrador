@@ -10,7 +10,8 @@ class MasPelisPopulares extends Component {
         this.state = {
             peliculas: [],
             backuppeliculas: [],
-            paginaACargar: 1
+            paginaACargar: 1,
+            valorPelicula: ""
         }
     }
     componentDidMount() {
@@ -36,8 +37,10 @@ class MasPelisPopulares extends Component {
     }
     filtrarPeliculas(nombrePelicula) {
         const peliculasFiltradas = this.state.backuppeliculas.filter((elm) => elm.title.toLowerCase().includes(nombrePelicula.toLowerCase()))
+        const valorPelicula = nombrePelicula
         this.setState({
-            peliculas: peliculasFiltradas
+            peliculas: peliculasFiltradas,
+            valorPelicula: valorPelicula
         })
     }
     cargarMas(){
@@ -53,35 +56,52 @@ class MasPelisPopulares extends Component {
         .catch((err) => console.log(err))
     }
     render() {
+        console.log("value", this.state.valorPelicula)
         return (
             <div>
                     {
                         this.state.peliculas.length > 0
+
                             ?
+
                             <section>
                             <h1>Populares</h1>   
                             <Filtro filtrarPeliculas={(nombre) => this.filtrarPeliculas(nombre)} />
-                            <section className='contenedor-pelicula'>
-                            {
-                                this.state.peliculas.map((elm, idx) => <Tarjeta key={elm.id + idx} data={elm} vermas={false} />)
-                            }
-                            {
-                                this.state.paginaACargar < 200 
+                                <section className='contenedor-pelicula'>
+                                    {
+                                        this.state.peliculas.map((elm, idx) => <Tarjeta key={elm.id + idx} data={elm} vermas={false} />)
+                                    }
+                                    {
+                                        this.state.paginaACargar < 200 
+                                        ?
+                                        <button className="vermas" onClick={() => this.cargarMas()}>
+                                            <i class="fa-solid fa-arrow-down"></i>
+                                        </button>
+                                        :
+                                        ``
+                                    }
+                                </section>
+                            </section>
+
+                            :
+
+                                this.state.peliculas.length === 0 && this.state.valorPelicula !== ""
+
                                 ?
-                                <button className="vermas" onClick={() => this.cargarMas()}>
-                                    <i class="fa-solid fa-arrow-down"></i>
-                                </button>
+
+                                <section>
+                                    <h1>Populares</h1>
+                                    <Filtro filtrarPeliculas={(nombre) => this.filtrarPeliculas(nombre)} />
+                                    <section>
+                                        <h2>No hay resultados para {this.state.valorPelicula}</h2>
+                                    </section>
+                                </section>
+
                                 :
-                                ``
-                            }
-                            </section>
-                            </section>
 
-                            : 
-
-                            <section className='contenedor-pelicula'>
-                            <img className="gif gif-mas" src="/img/gif3.gif" alt="Cargando..." />
-                            </section> 
+                                <section className='contenedor-pelicula'>
+                                <img className="gif gif-mas" src="/img/gif3.gif" alt="Cargando..." />
+                                </section> 
                     }
             </div>
         )
