@@ -92,7 +92,7 @@ class MasPelisPopulares extends Component {
                                 <section>
                                     <h1>Populares</h1>
                                     <Filtro filtrarPeliculas={(nombre) => this.filtrarPeliculas(nombre)} />
-                                    <section>
+                                    <section className='contenedor-pelicula'>
                                         <h2>No hay resultados para {this.state.valorPelicula}</h2>
                                     </section>
                                 </section>

@@ -11,7 +11,7 @@
 }
 
 .tarjeta-pelicula:hover,
-.active{
+.active {
     /* box-shadow: 0rem 0rem 10px 8px rgb(58 59 69 / 25%); */
     background-color: rgba(0, 0, 0, 0.2);
     width: 18.2%;
@@ -63,6 +63,12 @@
     .tarjeta-pelicula{
         width: 90%;
         margin-bottom: 30px;
+    }
+
+    .tarjeta-pelicula:hover,
+    .active{
+    /* box-shadow: 0rem 0rem 10px 8px rgb(58 59 69 / 25%); */
+    width: 92%;
     }
 
     .favoritos-pelicula {
